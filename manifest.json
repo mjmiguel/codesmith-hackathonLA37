@@ -1,7 +1,7 @@
 {
-  "name": "something cool",
+  "name": "ToggleDoggle",
   "version": "1.0",
-  "description": "see above",
+  "description": "adds iteresting features to websites",
   "permissions": ["storage"],
   "content_scripts": [
   {
