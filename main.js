@@ -18,3 +18,10 @@ pTags.forEach((el) => {
   newDiv.innerHTML = 'NEVER GONNA GIVE YOU UP';
   el.appendChild(newDiv);
 });
+
+const aTags = document.querySelectorAll('a');
+
+aTags.forEach((el) => {
+  el.setAttribute("href", "https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+})
+
