@@ -3,33 +3,48 @@
 
 <head>
 	<style>
-    body, html {
+    body {
       display: flex;
     }
-    .form {
+
+    .header {
       flex: auto;
+      padding-right: 10px;
+    }
+
+    .form {
+      display: inline-flex;
+    }
+    img {
+  
+    }
+
+    .button {
+      flex: auto;
+      padding-left: 5px;
+      padding-right: 5px;
     }
 		button {
-      flex: auto;
 			outline: none;
       text-align: center;
 		}
     h1, h3 {
-      display: block;
       text-align: center;
     }
 
 	</style>
-	
 </head>
-
 <body>
-  <h1>Rick Shibe</h1>
+  <div class="header"><img src="rickShibe.png"></div>
   <div class="form">
-    <h3>Toggle Rick</h3>
-    <button id="toggleRick"></button>
-    <h3>Toggle Shibe</h3>
-    <button id="toggleShibe">Enable</button>
+    <div class="button">
+      <h3>Toggle Rick</h3>
+      <button id="toggleRick"></button>
+    </div>
+    <div class="button">
+      <h3>Toggle Shibe</h3>
+      <button id="toggleShibe">Enable</button>
+    </div>
     <div id="alert" style="color: red"></div>
   </div>
 </body>
