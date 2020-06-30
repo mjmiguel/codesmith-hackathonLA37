@@ -1,0 +1,13 @@
+{
+  "name": "something cool",
+  "version": "1.0",
+  "description": "see above",
+  "permissions": ["storage"],
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["main.js"]
+  }
+],
+  "manifest_version": 2
+}
