@@ -5,7 +5,17 @@ chrome.storage.onChanged.addListener((data) => {
   // check local storage object.enabled to see state
   if (data.rickEnabled.newValue === true) {
     // add P tags to display string
-    pTags.forEach((el) => {
+    pTags.forEach((el, index) => {
+      if (index === 0) {
+        const body = document.getElementsByTagName('BODY')[0];
+        const newAudio = document.createElement('audio');
+        newAudio.setAttribute('src', 'rickRoll.mp3');
+        newAudio.setAttribute('type', 'audio/mpeg');
+        newAudio.setAttribute('id', 'rick');
+        newAudio.autoplay = 'true';
+        body.appendChild(newAudio);
+        newAudio.load();
+      }
       const newImg = document.createElement('img');
       newImg.setAttribute('src', 'https://i.imgur.com/BTNIDBR.gif?1');
       newImg.setAttribute('id', 'rick');
