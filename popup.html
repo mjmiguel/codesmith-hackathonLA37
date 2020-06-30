@@ -4,37 +4,19 @@
 <head>
 	<style>
 		button {
-			height: 30px;
-			width: 30px;
 			outline: none;
 		}
-		.dropdown {
-			position: relative;
-			display: inline-block;
-		}
-		.dropdown-content {
-			display: none;
-			position: absolute;
-			background-color: #f9f9f9;
-			min-width: 160px;
-			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-			padding: 12px 16px;
-			z-index: 1;
-		}
-		.dropdown:hover .dropdown-content {
-			display: block;
-		}
+
 	</style>
 	
 </head>
 
 <body>
+  <h1>Title of extension</h1>
 	<form>
-		<input type="text" id="input_id" value="">
-		<input type="button" value="Submit"/>
+    <button id="toggle">toggle</button>
 		<div id="alert" style="color: red"></div>
 	</form>
-
 </body>
-<script src="main.js"></script>
+<script type="text/javascript" src="popup.js"></script>
 </html>
