@@ -3,23 +3,34 @@
 
 <head>
 	<style>
+    body, html {
+      display: flex;
+    }
+    .form {
+      flex: auto;
+    }
 		button {
+      /* flex: auto; */
 			outline: none;
+      text-align: center;
 		}
+    h1, h3 {
+      flex: auto;
+      text-align: center;
+    }
 
 	</style>
 	
 </head>
 
 <body>
-  <h1>Title of extension</h1>
-	<form>
+  <h1>Rick Shibe</h1>
+  <div class="form"></div>
     <h3>Toggle Rick</h3>
-    <button id="toggleRick">toggle</button>
+    <button id="toggleRick"></button>
     <h3>Toggle Shibe</h3>
-    <button id="toggleShibe">toggle</button>
+    <button id="toggleShibe"></button>
 		<div id="alert" style="color: red"></div>
-	</form>
 </body>
 <script type="text/javascript" src="popup.js"></script>
 </html>
