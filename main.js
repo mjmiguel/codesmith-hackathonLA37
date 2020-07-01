@@ -34,6 +34,22 @@ chrome.storage.onChanged.addListener((data) => {
   }
 });
 
+const oldSrc = [];
+const imgList = [];
+// make list of old src tags to put page back together
+// tag each changed img with .shibe
+const getImgSrc = () => {
+  imgList.push(...document.querySelectorAll('img'));
+  imgList.forEach((el) => {
+    if (el.hasAttribute('src')) {
+      if (!oldSrc.includes(el.getAttribute('src'))) {
+        oldSrc.push(el.getAttribute('src'));
+      }
+    }
+  });
+};
+setInterval(getImgSrc, 0);
+
 // fetches json object
 fetch('https://shibe.online/api/shibes?count=100&urls=true&httpsUrls=true')
   .then((reponse) => reponse.json())
@@ -45,7 +61,7 @@ fetch('https://shibe.online/api/shibes?count=100&urls=true&httpsUrls=true')
       if (data.shibeEnabled.newValue === true) {
         // add shibe URLS
         if (shibeUrls) {
-          const imgList = document.querySelectorAll('img');
+          // const imgList = document.querySelectorAll('img');
           imgList.forEach((el, index) => {
             el.classList.add('shibe');
             el.setAttribute('src', shibeUrls[index]);
@@ -55,15 +71,6 @@ fetch('https://shibe.online/api/shibes?count=100&urls=true&httpsUrls=true')
     });
   });
 
-// make list of old src tags to put page back together
-// tag each changed img with .shibe
-const oldSrc = [];
-const imgList = document.querySelectorAll('img');
-imgList.forEach((el) => {
-  if (el.hasAttribute('src')) {
-    oldSrc.push(el.getAttribute('src'));
-  }
-});
 
 // listens for change on object property shibeEnabled property in local storage
 chrome.storage.onChanged.addListener(data => {
